@@ -1,0 +1,45 @@
+/** Clothing_Items:
+Tank Tops (3.99)
+Collar Shirts (7.99)
+Flannel Shirts (9.99)
+Bodysuits (8.99)
+Crop Tops (6.99)
+Coats (9.99)
+Brallette Tops (4.99)
+Bell Bottom Pants (12.99)
+Bootcut Pants (11.99)
+Skinny Jeans (13.99)
+Ankle Jeans (12.99)
+Shorts (10.99)
+Skirts (12.99)
+Tights (9.99)
+Slacks (14.99)
+**/
+
+CREATE TABLE clothing_items (id INTEGER Primary Key, name TEXT, price INTEGER, inventory INTEGER, demnand TEXT, location_Demographic TEXT);
+
+INSERT Into clothing_items VALUES 
+(1, "Tank Tops", 3.99, 35, "high", "Houston, TX"), 
+(2, "Collar Shirts", 7.99, 59, "low", "Houston, TX"),
+(3, "Flannel Shirts", 9.99, 23, "high","Los Angeles,CA"),
+(4, "Bodysuits", 8.99, 27, "high", "Los Angeles, CA"),
+(5, "Crop Tops", 6.99, 24, "high", "Houston, TX"),
+(6, "Coats", 9.99, 39, "high", "New York, NY"),
+(7, "Brallette Tops", 4.99, 21, "high", "Los Angeles, CA"),
+(8, "Bell Bottom Pants", 12.99, 72, "low", "Houston, TX"),
+(9, "Bootcut Pants", 11.99, 61, "low", "Houston, TX"),
+(10, "Skinny Jeans", 13.99, 41, "high", "Los Angeles, CA"),
+(11, "Ankle Jeans", 12.99, 19, "high", "New York, NY"),
+(12, "Shorts", 10.99, 26, "high", "Houston, TX"),
+(13, "Skirts", 12.99, 21, "high", "Los Angeles, CA"),
+(14, "Tight", 9.99, 28, "high", "Los Angeles, CA"),
+(15, "Slacks",14.99, 54, "low", "New York, NY");
+
+-- display the database order by price. 
+SELECT * FROM clothing_items ORDER BY price;
+
+--display clothing items in database that are low in inventory and in high demand.
+SELECT * FROM clothing_items WHERE inventory <50 ORDER BY price;
+
+--How much inventory do we have in total? 
+SELECT SUM (inventory) FROM clothing_items;
